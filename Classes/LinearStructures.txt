@@ -1,0 +1,6 @@
+Linear Structures:
+- Stack (LIFO input/output)
+- Queue (FIFO input/output)
+- Linked List (no philosophy for input/output)
+
+Ask about if it is worthwhile to have a if statement in the push function, or if it is generally better to create a better constructor and not allow an empty Stack.
