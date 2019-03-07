@@ -3,4 +3,6 @@ Linear Structures:
 - Queue (FIFO input/output)
 - Linked List (no philosophy for input/output)
 
-Ask about if it is worthwhile to have a if statement in the push function, or if it is generally better to create a better constructor and not allow an empty Stack.
+A stack inserts into the first position and also removes from the first position.
+A queue inserts into the first position and removes from the last position.
+A linked list allows you to insert and remove anywhere from the structure.
