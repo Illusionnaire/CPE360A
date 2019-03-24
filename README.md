@@ -1,8 +1,19 @@
 ## Coursework for CPE360A taught by Professor Iyengar Mukund
 
-II.  GRADINGPOLICY
-----------
-Grading  is  loosely  comprised  of  homeworks  (55%),  midterms  (40%),  and  class  participation  (5%).  
+<table align=center>
+    <tr>
+        <th>GRADING POLICY</th>
+    </tr>
+    <tr>
+        <td>Homeworks  (55%)</td>
+    </tr>
+    <tr>
+        <td>Midterms  (40%)</td>
+    </tr>
+    <tr>
+        <td>Class  Participation  (5%)</td>
+    </tr>
+</table>
 
 COURSE SYLLABUS
 1. Analysis of Algorithms: 
