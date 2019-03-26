@@ -73,6 +73,7 @@ Example: a + b * c
     </tr>
 </table>
 ---
+
 Example: a + b * c - d / e
 <table>
     <tr>
@@ -136,7 +137,8 @@ Example: a + b * c - d / e
         <td>abc*de/-+</td>
     </tr>
 </table>
---- 
+---
+
 Example: a * b - c / d + e ^ f
 <table>
     <tr>
@@ -211,6 +213,7 @@ Example: a * b - c / d + e ^ f
     </tr>
 </table>
 ---
+
 Example: (a + b) * c
 <table>
     <tr>
