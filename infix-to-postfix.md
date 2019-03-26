@@ -260,6 +260,12 @@ Example: (a + b) * c
     </tr>
 </table>
 
->I didn't want to table (a^b + c) * (d - e^f)
->Thanks for the long problem Regan
+*Thanks for the hard problems guys. I'm not tabling all that crazy mess*
+
+I didn't want to table:
+> (a^b + c) * (d - e^f)
 >> Answer: ab^c+def^-*
+
+I didn't want to table this one either: 
+>a^(b-c^d)*e*f-g
+>> Answer: abcd^-^ef**g-
