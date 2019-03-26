@@ -23,7 +23,7 @@ With postfix, a program can go in order from left to right and look for the oper
 3. Exponents are 2nd highest priority
 4. Multiplication/Division are 3rd priority
 5. Addition/Subtraction are 4th priority
----
+<hr>
 Example: a + b * c
 <table>
     <tr>
@@ -72,8 +72,7 @@ Example: a + b * c
         <td>abc*+</td>
     </tr>
 </table>
----
-
+<hr>
 Example: a + b * c - d / e
 <table>
     <tr>
@@ -137,8 +136,7 @@ Example: a + b * c - d / e
         <td>abc*de/-+</td>
     </tr>
 </table>
----
-
+<hr>
 Example: a * b - c / d + e ^ f
 <table>
     <tr>
@@ -212,8 +210,7 @@ Example: a * b - c / d + e ^ f
         <td>ab*cd/ef^+-</td>
     </tr>
 </table>
----
-
+<hr>
 Example: (a + b) * c
 <table>
     <tr>
