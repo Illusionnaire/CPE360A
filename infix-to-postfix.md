@@ -267,5 +267,5 @@ I didn't want to table:
 >> Answer: ab^c+def^-*
 
 I didn't want to table this one either: 
->a^(b-c^d)*e*f-g
+>a^(b-c^d)\*e\*f-g
 >> Answer: abcd^-^ef**g-
