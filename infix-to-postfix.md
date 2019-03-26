@@ -213,7 +213,7 @@ With postfix, a program can go in order from left to right and look for the oper
 </table>
 
 >Example: (a + b) * c
-<table>
+><table>
     <tr>
         <th>Symbol</th>
         <th>Stack</th>
