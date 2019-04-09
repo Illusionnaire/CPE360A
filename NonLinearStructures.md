@@ -87,4 +87,31 @@ Creating a Tree Structure
 > 3. 19 comes next and goes within the node that signifies it is greater than 15 and 17.
 > 4. 12 comes next and goes within the node that signifies less than 15.
 
+## Process for creating a Binary Search Tree
+1. Scan from the left to right through all your data. The first number is set as the root.
+2. Check to see for bigger/smaller and place it on the right or left.
+3. There are algorithms for dealing with duplicates, but we will not be using it
 
+## Search Function
+* Everything revolves around the search function. If you need to add a new item, you would check for the place that it should exist, and if it doesn't it is added there.
+* Loop through a pointer to walk through the tree nodes. 
+
+ ```
+ \\Recursive Functionality
+
+ search(int key, TreeNode *start)
+ {
+     if(key == start->value){
+        //Found the value in the tree
+        return;
+     }
+    else{
+        if(key > start->value){
+            search(key, start->right);
+        }
+        else{
+            search(key, start->left);
+        }
+    }
+ }
+ ```
