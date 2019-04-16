@@ -45,14 +45,14 @@ public:
     void addNodeBST(int key) {
         //start by searching for this value
         //If you find it, don't add it. If you don't find it, add it where you should have found it.
-        TreeNode *slow, *fast;
-        slow = fast = root;
         if(root == NULL){
             root = new TreeNode;
             root->value = key;
             return;
         }
         else {
+            TreeNode *slow, *fast;
+            slow = fast = root;
             while ( fast != NULL){
                 if (fast->value == key){
                     cout << "Duplicate... not added" << endl;
@@ -84,12 +84,72 @@ public:
     //Delete values
     //a) Find the node 
     //b) Figure out what kind of a node this is..
-        //Case I: leaf node( has not children)
-        //Case II: Has exactly one child
-        //Case III: Has two children 
     void deleteNodeBST(int key, TreeNode *start) {
+        if (start->value == NULL){
+            cout << "The Tree is empty";
+        }
+        else{
+            //Loop through to find key value
+            TreeNode *fast, *slow;
+            fast = slow = start;
 
+            while(fast != NULL){
+                if(fast->value == key){
+                    break;
+                }
+                else{
+                    cout << "Value not found in tree";
+                }
+            }
+
+            //Case I: leaf node( has not children)
+            if(fast->left == NULL && fast->right == NULL){
+                if(slow->left == fast){
+                    delete fast;
+                    slow->left = NULL;
+                }
+                else{
+                    delete fast;
+                    slow->right = NULL;
+                }
+            }
+            //Case II: Has exactly one child
+            //Four if statements to see if it is left/right and inner left/right that needs to be replaced
+            else if(fast->left == NULL || fast->right == NULL){
+                if (slow->right == fast){
+                    if (fast->left == NULL){
+                        slow->right = fast->right;
+                }
+                else{
+                        slow->right = fast->left;
+                }
+                }
+                else {
+                    if (fast->left == NULL){
+                        slow->left = fast->right;
+                }
+                else{
+                        slow->left = fast->left;
+                }
+                }
+            }
+            //Case III: Has two children 
+            else{
+                int replace = minValRSubTree(fast->right);
+                fast->value = replace;
+                deleteNodeBST(replace, fast->right);
+            }
+        }
     }
+
+    int minValRSubTree(TreeNode *start){
+        TreeNode *temp = start;
+        while(temp->left != NULL){
+            temp =temp->left;
+        }
+        return temp->value;
+    }
+
 
     //Display tree's contents
     //Left -> Current -> Right
