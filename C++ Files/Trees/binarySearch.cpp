@@ -85,6 +85,7 @@ public:
     //a) Find the node 
     //b) Figure out what kind of a node this is..
     void deleteNodeBST(int key, TreeNode *start) {
+        bool found = false;
         if (start->value == NULL){
             cout << "The Tree is empty";
         }
@@ -96,6 +97,7 @@ public:
             //While there is more branches to go down (ends on a leaf or the key)
             while(fast->left != NULL || fast->right != NULL){
                 if(fast->value == key){
+                    found = true;
                     break;
                 }
                 else {
@@ -111,6 +113,7 @@ public:
             }
 
             //Case I: leaf node( has not children)
+            if (found){
             if(fast->left == NULL && fast->right == NULL){
                 if(slow->left == fast){
                     delete fast;
@@ -147,6 +150,10 @@ public:
                 deleteNodeBST(replace, fast);
                 fast->value = replace;
                 
+            }
+            }
+            else{
+                cout << "Key not found within tree" << endl;
             }
         }
     }
