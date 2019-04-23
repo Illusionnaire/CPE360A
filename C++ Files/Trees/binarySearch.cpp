@@ -94,8 +94,8 @@ public:
             TreeNode *fast, *slow;
             fast = slow = start;
 
-            //While there is more branches to go down (ends on a leaf or the key)
-            while(fast->left != NULL || fast->right != NULL){
+            //While there are more branches to go down (ends on a leaf or the key)
+            while(fast != NULL || fast->value != key){
                 if(fast->value == key){
                     found = true;
                     break;
@@ -111,49 +111,49 @@ public:
                     }
                 }
             }
-
-            //Case I: leaf node( has not children)
-            if (found){
-            if(fast->left == NULL && fast->right == NULL){
-                if(slow->left == fast){
-                    delete fast;
-                    slow->left = NULL;
+            if (fast == NULL){
+                cout << "Key not found in tree" << endl;
+                return;
+            }
+            else {
+                //Case I: leaf node( has not children)
+                if(fast->left == NULL && fast->right == NULL){
+                    if(slow->left == fast){
+                        delete fast;
+                        slow->left = NULL;
+                    }
+                    else{
+                        delete fast;
+                        slow->right = NULL;
+                    }
                 }
+                //Case II: Has exactly one child
+                //Four if statements to see if it is left/right and inner left/right that needs to be replaced
+                else if(fast->left == NULL || fast->right == NULL){
+                    if (slow->right == fast){
+                        if (fast->left == NULL){
+                            slow->right = fast->right;
+                        }
+                        else{
+                                slow->right = fast->left;
+                        }
+                    }
+                    else {
+                        if (fast->left == NULL){
+                            slow->left = fast->right;
+                        }
+                        else{
+                                slow->left = fast->left;
+                        }
+                    }
+                }
+                //Case III: Has two children 
                 else{
-                    delete fast;
-                    slow->right = NULL;
+                    int replace = minValRSubTree(fast->right);
+                    deleteNodeBST(replace, fast);
+                    fast->value = replace;
+                    
                 }
-            }
-            //Case II: Has exactly one child
-            //Four if statements to see if it is left/right and inner left/right that needs to be replaced
-            else if(fast->left == NULL || fast->right == NULL){
-                if (slow->right == fast){
-                    if (fast->left == NULL){
-                        slow->right = fast->right;
-                }
-                else{
-                        slow->right = fast->left;
-                }
-                }
-                else {
-                    if (fast->left == NULL){
-                        slow->left = fast->right;
-                }
-                else{
-                        slow->left = fast->left;
-                }
-                }
-            }
-            //Case III: Has two children 
-            else{
-                int replace = minValRSubTree(fast->right);
-                deleteNodeBST(replace, fast);
-                fast->value = replace;
-                
-            }
-            }
-            else{
-                cout << "Key not found within tree" << endl;
             }
         }
     }
