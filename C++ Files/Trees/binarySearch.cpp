@@ -93,12 +93,20 @@ public:
             TreeNode *fast, *slow;
             fast = slow = start;
 
-            while(fast != NULL){
+            //While there is more branches to go down (ends on a leaf or the key)
+            while(fast->left != NULL || fast->right != NULL){
                 if(fast->value == key){
                     break;
                 }
-                else{
-                    cout << "Value not found in tree";
+                else {
+                    if (key > fast->value){
+                        slow = fast;
+                        fast = fast->right;
+                    }    
+                    else {
+                        slow = fast;
+                        fast = fast->left;
+                    }
                 }
             }
 
@@ -136,8 +144,9 @@ public:
             //Case III: Has two children 
             else{
                 int replace = minValRSubTree(fast->right);
+                deleteNodeBST(replace, fast);
                 fast->value = replace;
-                deleteNodeBST(replace, fast->right);
+                
             }
         }
     }
@@ -159,7 +168,7 @@ public:
         }
         else {
             inorder(start->left);
-            cout << start->value << " " << endl;
+            cout << "[" << start->value << "]";
             inorder(start->right);
         }
     }
@@ -170,7 +179,7 @@ public:
             return;
         }
         else {
-            cout << start->value << " " << endl;
+            cout << "[" << start->value << "]";
             preorder(start->left);
             preorder(start->right);
         }
@@ -184,7 +193,7 @@ public:
         else {
             inorder(start->left);
             inorder(start->right);
-            cout << start->value << " " << endl;
+            cout << "[" << start->value << "]";
         }
     }
 
@@ -194,8 +203,9 @@ public:
 int main() {
 BST myTree;
 int choice, value;
-value = 0;
-while(value < 7) {
+value = choice = 0;
+while(choice < 7) {
+    cout << endl;
     cout << "Press 1 to add to BST" << endl;
     cout << "Press 2 to search" << endl;
     cout << "Press 3 to delete" << endl;
@@ -213,7 +223,9 @@ while(value < 7) {
                 cin >> value;
                 myTree.searchBST(value, myTree.root);
                 break;
-        case 3: cout << "That's the assignment!" << endl;
+        case 3: cout << "Delete what?" << endl;
+                cin >> value;
+                myTree.deleteNodeBST(value,myTree.root);
                 break;
         case 4: myTree.inorder(myTree.root);
                 break;
