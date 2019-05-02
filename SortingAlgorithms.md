@@ -34,7 +34,7 @@ for(i=1->N-1){
 3. Left Justified
     * All leaf nodes are as far left as possible (fills from left to right)
 4. "Heap Property"
-    * Parent Node > Both Children Nodes)
+    * Parent Node > Both Children Nodes
 
 ##### Steps to Fill
 1. Fill up one level at a time
