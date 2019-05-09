@@ -1,0 +1,3 @@
+Did you really think I would upload the midterm solutions? I'll upload them after the due date...
+
+If you have questions about them, I'm down to help if you e-mail me.

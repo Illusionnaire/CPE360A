@@ -1,0 +1,33 @@
+    1. Binary Search Trees are better over linked lists and arrays in that they have a much faster search and insertion rate for computation. For an array and linked list, in order to search for an item within it, the user must loop through the whole list of items to find it, an operation of order O(N), while with a binary search tree, using comparisons, this operation goes down to O(log(N)) which is much less work computationally and much faster to search through.
+
+
+2. The best case running time for Binary Search Trees is O(log(N)). This is when the binary search tree is balanced. This occurs when the left and right subtrees' heights differ by at most one.  If a tree is not balanced, then the algorithm would have to take more than the optimal amount of steps through the tree in order to reach the value. 
+
+At worst case, a binary search tree can be one sided and act very similarly to an array of values. (For instance if everything was on the right subtree). This would make the binary search tree slowest at an operation of order O(N). 
+
+Because the algorithm operates at O(logBase2(N)) at best case, it would take 20 (19.93 rounded up) comparisons to find a key in 1 million records, but at worst case it would take 1 million records.
+
+    3. A quicksort algorithm uses the divide and conquer technique in order to effectively split the values into sub-arrays, which are then organized once they are compared.
+
+    Input: 1, 4, 7, 6, 3, 5, 0, 2, 9, 8
+
+    Step 1: Choose a pivot point (in this case we will use the first number in the array)
+    Step 2: Split the values until 2 remain in the subarray, and then remake the array as an organized array. (See image attached Quicksort.png)
+
+4. Merge Sort uses a divide and conquer technique to divide all the numbers into pairs, comparing and organizing each of those, and then combining buckets as you rejoin the array. This way you know that the left most number is smaller then the one to its right so you can lower the amount of comparisons needed.
+(See the attached image MergeSort.png)
+
+    5. A hash table comes across problems with collision when multiple elements try to fill the same location in the hash table. There are multiple ways to solve this.
+
+    Separate chaining using linked lists looks to expand the hash table outwards for that value of the hash table. It allows multiple items to occupy one area of the hash table, but those numbers must then be looked through the entire linked list at that node to find them. (See image SeparateChaining.png)
+
+    Linear probing looks to find the next available open spot within the hash table. If an item is placed in the 4th slot of the hash table but an item is already occupying it, it will move down to the 5th, etc... until an open slot is found. There is again more work involved to search back for that value as multiple slots of the hash table must be tested to find it. (See image LinearProbing.png)
+
+6. A HeapSort takes advantage of the heap object in the CPU, which is a balanced, left justified binary tree with the "Heap Property" which is that the parent node is bigger than both children. As the heap object is built, it is reorganized at each step to continue to agree with all of these rules. Similarly it is rebuilt every time an item is removed from it. In order to put items in order, the root can be removed each time as it is always the largest value. (See image HeapSort.png)
+
+7. A binary tree can be printed out in three different ways, recursively: inorder, preorder and postorder. Inorder printing puts emphasis on the left, then parent then right nodes in order to put them in order of actual size. Pre-order puts emphasis on the parent and then the left and right children printing how the tree appears to be built from root to leaves. Post-order puts emphasis on the opposite of pre-order printing the children first (left then right) and then the parent, making it appear like the tree from leaves to root.
+
+Preorder: A B D G H E C F I J
+Inorder : G D H B E A C I F J
+Postorder: G H D E B I J F C A
+
